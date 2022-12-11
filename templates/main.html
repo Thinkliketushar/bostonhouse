@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link rel="icon" href="{{ url_for('static', filename='img/house.png') }}" type="image/x-icon" />
+  <link rel="shortcut icon" href="{{ url_for('static', filename='img/house.png') }}" type="image/x-icon" />
+  <title>Predict Boston House Price</title>
+</head>
+
+<body>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+
+  <header id="nav-placeholder" style="padding-top: 66px;">
+    <nav style="background-color: black !important ;" id="nav"
+      class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul style="font-size: 18px;" class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a style="color: #ffbd39;;" class="nav-link" href="{{url_for('hello')}}"><i class="fa fa-home"></i> Home
+              <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a style="color: white;" class="nav-link" href="/#che" id="navbarDropdown" role="button"
+              aria-expanded="false">
+              Predict house Price
+            </a>
+          </li>
+          <li class="nav-item">
+            <a style="color: white;" class="nav-link" href="/#aboutthyroid" id="navbarDropdown" role="button"
+              aria-expanded="false">
+              About Boston House
+            </a>
+          </li>
+        </ul>
+        </div>
+
+    </nav>
+    <style>
+      a {
+        text-decoration: none;
+        display: inline-block;
+        position: relative;
+      }
+
+      a:after {
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background: #ffbd39;
+        ;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+      }
+
+      a:hover:after {
+        width: 100%;
+        left: 0;
+      }
+
+      @media screen and (max-height: 300px) {
+        ul {
+          margin-top: 40px;
+        }
+      }
+    </style>
+  </header>
+
+  {% block content %}
+  {% endblock %}
+
+
+  <div id="aboutthyroid"  class="container">
+    <div class="row justify-content-center pb-5">
+      <div class="col-md-10 heading-section text-center ftco-animate fadeInUp ftco-animated" style="margin-top: 10%;">
+        <h1 id="pred" class="big big-2">Abour Boston Houses</h1>
+        <h2 class="mb-4">About Boston Houses</h2>
+        <p>A signature product with imprints of class and quality, Boston House is a prestigious seven-storey building located just next to the Western Express Highway. This modern commercial building developed by Wallfort Properties thrives in the market while accommodating various businesses, setting new standards in functionality, sustainability, and adaptability. </p>
+      
+      </div>
+    </div>
+    <style>
+      .heading-section h2 {
+        color: white;
+        font-size: 50px;
+        font-weight: 700;
+      }
+
+      .heading-section h1.big {
+        position: absolute;
+        top: 0px;
+        left: 0;
+        font-size: 7vw;
+        color: rgba(255, 255, 255, 0.1);
+        z-index: -1;
+        font-weight: 900;
+      }
+
+      .heading-section h1.big.big-2 {
+        right: 0;
+      }
+
+      p {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        color: #999999;
+      }
+    </style>
+  </div>
+
+
+
+  <div style="color: #ffbd39;" class="footer-copyright text-center py-3">© 2021 Copyright:
+    <a style="color: white; text-decoration: none;" href="{{url_for('hello')}}"> Thinkliketushar.bostonineuron</a>
+  </div>
+
+  <style>
+    body.modal-open {
+      padding-right: 0px !important;
+    }
+
+    .navbar {
+      padding-right: 20px !important;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-y: scroll;
+    }
+
+    body {
+      font-family: 'Baloo Da 2', cursive;
+      background-color: black;
+    }
+  </style>
+  <script>
+
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+
+    window.onscroll = function () { myFunction() };
+
+    var navbar = document.getElementById("nav");
+
+
+    var sticky = navbar.offsetTop;
+    function myFunction() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    } 
+  </script>
+</body>
+
+</html>

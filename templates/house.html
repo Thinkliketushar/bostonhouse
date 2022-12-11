@@ -1,0 +1,67 @@
+{% extends "main.html" %}
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predict Boston House Price</title>
+</head>
+
+<body>
+  <div id="che" , class="container">
+    <div class="row justify-content-center pb-5">
+      <div class="col-md-10 heading-section text-center ftco-animate fadeInUp ftco-animated">
+        <h1 style="font-size: 5vw;" , class="big big-2">Predict Boston House Price</h1>
+        <h2 class="mb-4">Predict Boston House Price</h2>
+        <p>A signature product with imprints of class and quality, Boston House is a prestigious seven-storey building located just next to the Western Express Highway. This modern commercial building developed by Wallfort Properties thrives in the market while accommodating various businesses, setting new standards in functionality, sustainability, and adaptability. </p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="card-deck mb-3 text-center">
+      <div style="background-color: #1a1a1a;" class="card mb-4 shadow-sm">
+        <div class="card-header">
+          <h1 style="color: red;" >{{ Prediction_text }}</h1>
+
+          <img style="width: 156px;" src="{{url_for('static', filename='img/House1.png')}}" alt="">
+
+
+          <form action="{{url_for('predict')}}" method = "post">
+            <br>
+            <br>
+              <input type="number" step="0.01" name="num1" placeholder="Enter CRIM value">
+              <input type="number" step="0.01" name="num2" placeholder="Enter ZN value">
+              <input type="number" step="0.01" name="num3" placeholder="Enter INDUS value">
+              <input type="number" step="0.01" name="num4" placeholder="Enter CHAS value">
+              <input type="number" step="0.01" name="num5" placeholder="Enter NOX value">
+              <input type="number" step="0.01" name="num6" placeholder="Enter RM value">
+              <input type="number" step="0.01" name="num7" placeholder="Enter AGE value">
+              <input type="number" step="0.01" name="num8" placeholder="Enter DIS value">
+              <input type="number" step="0.01" name="num9" placeholder="Enter RAD value">
+              <input type="number" step="0.01" name="num10" placeholder="Enter TAX value">
+              <input type="number" step="0.01" name="num11" placeholder="Enter PTRATIO value">
+              <input type="number" step="0.01" name="num12" placeholder="Enter B value">
+              <input type="number" step="0.01" name="num13" placeholder="Enter LSTAT value">
+            <br>
+            <br>
+
+                        <br><br>
+                        <button style="text-align: center; color: black; background-color: #ffbd39;" value="Predict"
+                        type="submit" class="btn btn-default">Predict</button>
+            </form> 
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+{% endblock %}
